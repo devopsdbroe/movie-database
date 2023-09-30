@@ -11,7 +11,6 @@ const MovieDetails = ({ movie }) => {
 			/>
 			<h1>{movie.title}</h1>
 			<p>{movie.overview}</p>
-			<p>{movie.runtime}</p>
 		</div>
 	);
 };

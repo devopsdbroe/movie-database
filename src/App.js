@@ -31,8 +31,8 @@ function App() {
 					<SearchBar onSearch={handleSearch} />
 				</Header>
 				<MainContent>
-					<MovieList movies={movies} onSelect={setSelectedMovie} />
 					<MovieDetails movie={selectedMovie} />
+					<MovieList movies={movies} onSelect={setSelectedMovie} />
 				</MainContent>
 			</Container>
 		</>
