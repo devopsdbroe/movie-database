@@ -20,6 +20,7 @@ function App() {
 		} else {
 			setMovies(response.data.results);
 		}
+		setSelectedMovie(null);
 	};
 
 	return (
@@ -31,7 +32,7 @@ function App() {
 					<SearchBar onSearch={handleSearch} />
 				</Header>
 				<MainContent>
-					<MovieDetails movie={selectedMovie} />
+					<MovieDetails movie={selectedMovie} hasMovies={movies.length > 0} />
 					<MovieList movies={movies} onSelect={setSelectedMovie} />
 				</MainContent>
 			</Container>
