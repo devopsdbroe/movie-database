@@ -5,8 +5,13 @@ const MovieDetails = ({ movie }) => {
 
 	return (
 		<div>
-			<h2>{movie.title}</h2>
+			<img
+				src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+				alt={movie.title}
+			/>
+			<h1>{movie.title}</h1>
 			<p>{movie.overview}</p>
+			<p>{movie.runtime}</p>
 		</div>
 	);
 };
