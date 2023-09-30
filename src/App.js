@@ -3,6 +3,10 @@ import SearchBar from "./components/SearchBar";
 import MovieList from "./components/MovieList";
 import MovieDetails from "./components/MovieDetails";
 import { searchMovies } from "./utils/api";
+import { Container, Header, MainContent, GlobalStyles } from "./AppStyles";
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`${GlobalStyles}`;
 
 function App() {
 	const [movies, setMovies] = useState([]);
@@ -19,11 +23,19 @@ function App() {
 	};
 
 	return (
-		<div>
-			<SearchBar onSearch={handleSearch} />
-			<MovieList movies={movies} onSelect={setSelectedMovie} />
-			<MovieDetails movie={selectedMovie} />
-		</div>
+		<>
+			<GlobalStyle />
+			<Container>
+				<Header>
+					<h1>Movie Database</h1>
+					<SearchBar onSearch={handleSearch} />
+				</Header>
+				<MainContent>
+					<MovieList movies={movies} onSelect={setSelectedMovie} />
+					<MovieDetails movie={selectedMovie} />
+				</MainContent>
+			</Container>
+		</>
 	);
 }
 
